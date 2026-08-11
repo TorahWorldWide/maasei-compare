@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>מעשי ישראל — לפני ואחרי התקן</title>
+<meta name="description" content="מה השתנה כששבעה מעשים נבנו מחדש מאפס לפי 131 כללי תקן דף המעשה.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0a1834; --navy-deep:#070f24; --card:#0f234d; --ink:#eaf1ff;
+  --dim:#9fb3d9; --gold:#c9a84a; --gold-br:#e6c66e; --sky:#38bdf8;
+  --line:rgba(201,168,74,.22); --line-soft:rgba(201,168,74,.12);
+  --before:#8ea2c6; --after:#e6c66e; --good:#5fd39a; --warn:#f0a35e;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--navy);color:var(--ink);direction:rtl;text-align:right;
+  font:400 16px/1.7 "Heebo",Arial,sans-serif;-webkit-font-smoothing:antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -10%,rgba(37,99,235,.22),transparent 60%),
+    radial-gradient(ellipse 60% 50% at 50% 110%,rgba(201,168,74,.08),transparent 60%);
+  background-attachment:fixed}
+h1,h2,h3{font-family:"Frank Ruhl Libre",Georgia,serif;letter-spacing:-.01em;margin:0}
+a{color:var(--gold-br);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+.gold-rule{height:1px;background:linear-gradient(to left,transparent,rgba(201,168,74,.55),transparent)}
+
+/* ── stage ── */
+.stage{position:relative;overflow:hidden;padding:74px 0 58px;
+  background:radial-gradient(ellipse 120% 80% at 50% 0%,rgba(37,99,235,.18),transparent 55%),
+    linear-gradient(to bottom,#070f24 0%,#0a1834 62%,#0a1834 100%)}
+.stage::before,.stage::after{content:"";position:absolute;top:-14%;width:34%;height:135%;
+  pointer-events:none;filter:blur(26px);opacity:.5}
+.stage::before{right:8%;background:linear-gradient(198deg,rgba(230,198,110,.30),transparent 62%);
+  transform:rotate(9deg)}
+.stage::after{left:8%;background:linear-gradient(162deg,rgba(230,198,110,.30),transparent 62%);
+  transform:rotate(-9deg)}
+.stage .wrap{position:relative;z-index:2;text-align:center}
+.eyebrow{font-size:12.5px;letter-spacing:.22em;color:var(--gold);text-transform:none;margin-bottom:16px}
+.stage h1{font-size:clamp(34px,6.4vw,58px);font-weight:700;line-height:1.12}
+.stage h1 em{font-style:normal;color:var(--gold-br)}
+.lead{max-width:640px;margin:20px auto 0;color:#c8d6f0;font-size:clamp(15px,2.2vw,18px);font-weight:300}
+.jump{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+.jump a{border:1px solid var(--line);border-radius:999px;padding:9px 18px;font-size:13.5px;
+  color:var(--ink);background:rgba(15,35,77,.55);transition:.18s}
+.jump a:hover{border-color:var(--gold);color:var(--gold-br);text-decoration:none;
+  box-shadow:0 0 22px rgba(201,168,74,.14)}
+
+/* ── headline numbers ── */
+.marquee{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;
+  margin:-34px auto 0;position:relative;z-index:5}
+.big{background:linear-gradient(180deg,rgba(15,35,77,.96),rgba(10,24,52,.96));
+  border:1px solid var(--line);border-radius:18px;padding:20px 18px;text-align:center;
+  box-shadow:0 18px 42px rgba(0,0,0,.34)}
+.big .n{font-family:"Frank Ruhl Libre",serif;font-size:36px;font-weight:700;color:var(--gold-br);
+  line-height:1.1;display:flex;align-items:baseline;justify-content:center;gap:9px}
+.big .n s{text-decoration:none;color:var(--before);font-size:20px;font-weight:400;opacity:.85}
+.big .n i{font-style:normal;color:var(--dim);font-size:17px}
+.big .l{font-size:12.5px;color:var(--dim);margin-top:7px;letter-spacing:.02em}
+
+section{padding:58px 0 0}
+.head{display:flex;align-items:baseline;gap:14px;margin-bottom:8px;flex-wrap:wrap}
+.head h2{font-size:clamp(23px,3.6vw,31px);font-weight:700}
+.head span{color:var(--dim);font-size:14px;font-weight:300}
+.sub{color:#c8d6f0;font-weight:300;max-width:720px;margin:14px 0 26px;font-size:15.5px}
+
+/* ── the table ── */
+.tbl{border:1px solid var(--line);border-radius:20px;overflow:hidden;
+  background:linear-gradient(180deg,rgba(15,35,77,.82),rgba(10,24,52,.82))}
+.tr{display:grid;grid-template-columns:1fr 118px 118px;gap:0;
+  border-bottom:1px solid var(--line-soft);align-items:center}
+.tr:last-child{border-bottom:0}
+.tr.h{background:rgba(7,15,36,.7);border-bottom:1px solid var(--line)}
+.tr.h b{font:500 12.5px/1.4 "Heebo";color:var(--dim);letter-spacing:.06em;padding:14px 12px;
+  text-align:center;display:block}
+.tr.h b:first-child{text-align:right;padding-inline-start:22px}
+.tr.h b.a{color:var(--gold)}
+.tc{padding:15px 12px;text-align:center;font-family:"Frank Ruhl Libre",serif;font-size:23px;font-weight:500}
+.tc.b{color:var(--before)}
+.tc.a{color:var(--gold-br)}
+.tc small{display:block;font-family:"Heebo";font-size:11px;font-weight:400;color:var(--dim);margin-top:2px}
+.tk{padding:15px 22px}
+.tk b{font-weight:500;font-size:15.5px;display:block}
+.tk span{color:var(--dim);font-size:13px;font-weight:300;line-height:1.6;display:block;margin-top:3px}
+.tr.down .tc.a{color:var(--good)}
+.tr.fix .tc.a{color:var(--sky)}
+.tr.score{background:rgba(201,168,74,.05)}
+.tr.score .tc{font-size:27px}
+
+/* ── featured errors ── */
+.cards{display:grid;gap:18px}
+.card{border:1px solid var(--line);border-radius:20px;overflow:hidden;
+  background:linear-gradient(180deg,rgba(15,35,77,.86),rgba(10,24,52,.86))}
+.card>.top{display:flex;align-items:center;gap:12px;padding:15px 22px;
+  border-bottom:1px solid var(--line-soft);flex-wrap:wrap}
+.card .kick{font-family:"Frank Ruhl Libre",serif;font-size:19px;font-weight:700;color:var(--gold-br)}
+.card .who{font-size:12.5px;color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:3px 11px}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.ba>div{padding:18px 22px}
+.ba>div:first-child{border-inline-end:1px solid var(--line-soft)}
+.tag{font-size:11.5px;letter-spacing:.12em;margin-bottom:9px;display:block}
+.tag.b{color:var(--before)} .tag.a{color:var(--gold)}
+.ba .t{font-size:15px;line-height:1.65}
+.ba .b .t{color:#b7c6e2;text-decoration:line-through;text-decoration-color:rgba(240,163,94,.5);
+  text-decoration-thickness:1px}
+.card .why{padding:16px 22px 20px;border-top:1px solid var(--line-soft);color:#c8d6f0;
+  font-size:14.5px;font-weight:300;background:rgba(7,15,36,.35)}
+.card .why b{color:var(--ink);font-weight:500}
+.card .why .src{display:inline-block;margin-top:10px;font-size:13px}
+
+/* ── per deed ── */
+nav.deeds{display:flex;gap:8px;overflow-x:auto;padding-bottom:14px;scrollbar-width:none}
+nav.deeds::-webkit-scrollbar{display:none}
+nav.deeds button{white-space:nowrap;border:1px solid var(--line);background:rgba(15,35,77,.6);
+  color:var(--ink);border-radius:999px;padding:8px 16px;font:400 13.5px "Heebo";cursor:pointer;transition:.16s}
+nav.deeds button:hover{border-color:var(--gold)}
+nav.deeds button.on{background:var(--gold);border-color:var(--gold);color:#0a1834;font-weight:500}
+.panel{border:1px solid var(--line);border-radius:20px;padding:24px;
+  background:linear-gradient(180deg,rgba(15,35,77,.82),rgba(10,24,52,.82))}
+.titles{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px}
+.titles>div{min-width:0}
+.titles .t{font-family:"Frank Ruhl Libre",serif;font-size:18px;line-height:1.45}
+.titles .b .t{color:var(--before)}
+.titles .a .t{color:var(--gold-br)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 4px}
+.chip{border:1px solid var(--line-soft);background:rgba(7,15,36,.5);border-radius:10px;
+  padding:7px 12px;font-size:12.5px;color:var(--dim)}
+.chip b{color:var(--gold-br);font-weight:500;font-size:14px}
+.chip s{text-decoration:none;color:var(--before);opacity:.8}
+h3.mini{font-size:15px;color:var(--gold);margin:26px 0 12px;font-weight:500;
+  display:flex;align-items:center;gap:10px}
+h3.mini::after{content:"";flex:1;height:1px;background:var(--line-soft)}
+.fix{border-inline-start:2px solid rgba(201,168,74,.45);padding:2px 16px;margin-bottom:16px}
+.fix .lbl{font-size:12.5px;color:var(--gold);margin-bottom:5px}
+.fix .was{color:#b7c6e2;font-size:14.5px}
+.fix .was::before{content:"היה · ";color:var(--before);font-size:12px}
+.fix .now{font-size:14.5px;margin-top:4px}
+.fix .now::before{content:"הפך ל· ";color:var(--gold);font-size:12px}
+.fix .why{color:var(--dim);font-size:13px;font-weight:300;margin-top:6px}
+.rm{color:#c8d6f0;font-size:14px;margin-bottom:11px;padding-inline-start:16px;position:relative}
+.rm::before{content:"✕";position:absolute;inset-inline-start:0;color:var(--warn);font-size:12px;top:3px}
+.rm span{color:var(--dim);font-size:12.5px;font-weight:300;display:block}
+.open{display:inline-flex;align-items:center;gap:7px;margin-top:22px;border:1px solid var(--line);
+  border-radius:999px;padding:9px 18px;font-size:13.5px}
+.open:hover{border-color:var(--gold);text-decoration:none}
+
+/* ── honest panel ── */
+.honest{border:1px solid rgba(240,163,94,.32);border-inline-start:3px solid var(--warn);
+  border-radius:18px;padding:22px 24px;background:rgba(240,163,94,.05)}
+.honest h3{font-size:19px;color:var(--warn);margin-bottom:10px}
+.honest p{color:#c8d6f0;font-weight:300;font-size:15px;margin:0 0 10px}
+.honest ul{margin:12px 0 0;padding-inline-start:20px;color:#c8d6f0;font-weight:300;font-size:14.5px}
+.honest li{margin-bottom:7px}
+
+footer{margin-top:70px;padding:34px 0 60px;text-align:center;color:var(--dim);font-size:13.5px}
+footer .links{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin-bottom:14px;font-size:14px}
+
+@media(max-width:760px){
+  .tr{grid-template-columns:1fr 78px 78px}
+  .tk{padding:13px 15px}
+  .tk span{font-size:12px}
+  .tc{font-size:19px;padding:13px 6px}
+  .tr.score .tc{font-size:21px}
+  .ba,.titles{grid-template-columns:1fr}
+  .ba>div:first-child{border-inline-end:0;border-bottom:1px solid var(--line-soft)}
+  .panel{padding:18px}
+}
+</style>
+</head>
+<body>
+
+<div class="stage">
+  <div class="wrap">
+    <div class="eyebrow">מעשי ישראל · דוח מעבר</div>
+    <h1>אותם שבעה מעשים,<br><em>נבנו מחדש מאפס</em></h1>
+    <p class="lead">הדפים האלה נכתבו פעם אחת בידי סוכנים מהירים, ואז נכתבו שוב לפי תקן דף
+      המעשה — 131 כללים. הדף הזה מראה מה נמדד, מה תוקן, ומה נמחק בדרך.</p>
+    <div class="jump">
+      <a href="#table">הטבלה</a>
+      <a href="#errors">ארבע שגיאות אמיתיות</a>
+      <a href="#deeds">מעש־מעש</a>
+      <a href="#honest">מה עוד לא מושלם</a>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="marquee"><div class="big"><div class="n"><span dir="ltr">46/46</span><s>היה 17</s></div><div class="l">ציון התקן, המעש החציוני</div></div><div class="big"><div class="n">154<s>היו 27</s></div><div class="l">מקורות עם קישור גלוי</div></div><div class="big"><div class="n">54</div><div class="l">שגיאות שתוקנו ופריטים שנמחקו</div></div><div class="big"><div class="n">0<s>היו 5</s></div><div class="l">ציטוטים מוויקיפדיה</div></div></div>
+
+  <section id="table">
+    <div class="head"><h2>מה נמדד</h2><span>שבעת המעשים יחד · נבדק במכונה, לא בהערכה</span></div>
+    <p class="sub">כל מספר בטבלה מחושב מהשורה החיה במסד ומהגיבוי שנשמר לפניה. אין כאן דיווח
+      עצמי של סוכן: הציון נגזר מ־46 הכללים שאפשר להכריע בקוד.</p>
+    <div class="tbl">
+      <div class="tr h"><b>מדד</b><b>לפני</b><b class="a">אחרי</b></div>
+      <div class="tr score"><div class="tk"><b>ציון מול התקן</b><span>המעש החציוני, מתוך 46 הכללים שנבדקים במכונה מתוך 131. 6 מתוך 7 עוברים היום את כולם.</span></div><div class="tc b">17/46</div><div class="tc a">46/46</div></div><div class="tr up"><div class="tk"><b>מקורות</b><span>ציטוטים בכל שבעת המעשים יחד. כל אחד מהם עם קישור גלוי בדף, לחיץ, לא הערת שוליים.</span></div><div class="tc b">27</div><div class="tc a">154</div></div><div class="tr up"><div class="tk"><b>דומיינים עצמאיים</b><span>חמישה אתרים בלתי־תלויים הם הרצפה של התקן. חמישה ציטוטים מאותו אתר אינם חמישה מקורות.</span></div><div class="tc b">1</div><div class="tc a">6</div></div><div class="tr down"><div class="tk"><b>ציטוטים מוויקיפדיה</b><span>ויקיפדיה מותרת כמפת דרכים להערות השוליים שלה, ואסורה כאסמכתא.</span></div><div class="tc b">5</div><div class="tc a">0</div></div><div class="tr up"><div class="tk"><b>ציטוט עם מיקום מדויק ותאריך</b><span>עמוד, פסקה או חותם־זמן, ותאריך פרסום — כדי שאפשר יהיה לחזור בדיוק לאותה נקודה.</span></div><div class="tc b">0</div><div class="tc a">154</div></div><div class="tr up"><div class="tk"><b>תמונות עם כיתוב וקרדיט</b><span>תמונה בלי מקור, מועד וכיתוב היא אילוסטרציה. כאן היא צריכה להיות תיעוד.</span></div><div class="tc b">0</div><div class="tc a">57</div></div><div class="tr up"><div class="tk"><b>תקציר פותח + “קרא עוד”</b><span>הדף נפתח בסיפור בשלוש שורות, וכל השאר נפתח בלחיצה. קודם הדף פתח בקיר טקסט.</span></div><div class="tc b">0/7</div><div class="tc a">7/7</div></div><div class="tr up"><div class="tk"><b>איך התחיל · מה קרה אחר כך · מה קיבלו · כבוד</b><span>ארבעת השדות שהופכים ערך לסיפור. “לא רלוונטי” עם נימוק נחשב תשובה; שדה ריק לא.</span></div><div class="tc b">0/28</div><div class="tc a">23/28</div></div><div class="tr up"><div class="tk"><b>אנשים מזוהים בשם</b><span>שם בעברית ובאנגלית ותפקיד — לא “קבוצת חוקרים”.</span></div><div class="tc b">0</div><div class="tc a">49</div></div><div class="tr up"><div class="tk"><b>מיקום עם רמת דיוק</b><span>עיר אמיתית עם ציון כמה היא מדויקת, ולא ניחוש שנשמע טוב.</span></div><div class="tc b">0/7</div><div class="tc a">7/7</div></div><div class="tr fix"><div class="tk"><b>שגיאות שנמצאו ותוקנו</b><span>כל אחת רשומה עם מה היה, מה נכתב במקומו, ומאיזה מקור.</span></div><div class="tc b">—</div><div class="tc a">25</div></div><div class="tr fix"><div class="tk"><b>פריטים שנמחקו מהדף</b><span>טענה שלא נמצאה שוב באף מקור נמחקת. היא לא עוברת הלאה בשקט.</span></div><div class="tc b">—</div><div class="tc a">29</div></div><div class="tr fix"><div class="tk"><b>מחלוקות שנרשמו במפורש</b><span>כשהמקורות חלוקים, הדף אומר זאת במקום לבחור בשקט את המספר היפה.</span></div><div class="tc b">0</div><div class="tc a">20</div></div><div class="tr fix"><div class="tk"><b>שאלות שנשארו פתוחות</b><span>מה שלא הוכרע נרשם כפתוח. זו הסיבה שהמספר הזה גדול מאפס בכוונה.</span></div><div class="tc b">0</div><div class="tc a">41</div></div>
+    </div>
+  </section>
+
+  <section id="errors">
+    <div class="head"><h2>ארבע שגיאות אמיתיות</h2><span>מתוך 25 שתוקנו</span></div>
+    <p class="sub">לא דוגמאות להמחשה — אלה ההבדלים שיושבים באתר עכשיו, כל אחד עם המקור
+      שהכריע אותו.</p>
+    <div class="cards"><article class="card">
+      <div class="top"><span class="kick">המצאה שלא הייתה</span><span class="who">הדי לאמאר</span></div>
+      <div class="ba">
+        <div class="b"><span class="tag b">מה שהיה כתוב</span><div class="t">שחקנית הוליווד הדי לאמאר שותפה בהמצאת קפיצת־התדרים שבבסיס ה־Wi‑Fi</div></div>
+        <div class="a"><span class="tag a">מה שכתוב היום</span><div class="t">הדי לאמאר ואנתייל רשמו פטנט להכוונת טורפדו בקפיצת תדרים, ולא קיבלו עליו אגורה</div></div>
+      </div>
+      <div class="why">תיק הפטנט מראה שהתביעה היחידה שניסחה את עקרון קפיצת התדרים נדחתה ב־13.8.1941 כמכוסה בפטנטים קודמים, ועורכי הדין מחקו אותה. ממציא הבלוטות׳ העיד שלא הכיר את הפטנט, וה־Wi‑Fi זנח קפיצת תדרים מוקדם. מה שנשאר — פטנט אמיתי, רעיון מקורי, ואפס תמורה — חזק יותר מהכותרת שנמחקה.
+        <a class="src" href="https://patents.google.com/patent/US2292387A/en" target="_blank" rel="noopener">↗ פטנט US 2,292,387 · Google Patents</a></div>
+    </article><article class="card">
+      <div class="top"><span class="kick">הצלחה שהייתה כישלון</span><span class="who">עזר מציון</span></div>
+      <div class="ba">
+        <div class="b"><span class="tag b">מה שהיה כתוב</span><div class="t">מבצע הגיוס של 1996 למען משה סחייק הוצג כהצלחה: 5,000 תורמים נרשמו.</div></div>
+        <div class="a"><span class="tag a">מה שכתוב היום</span><div class="t">המבצע לא מצא התאמה. סחייק מת. המאגר נולד מהכישלון הזה.</div></div>
+      </div>
+      <div class="why">אתר עזר מציון עצמו כותב: “no match was found among the 5,000 people who participated in the drive. Sadly, the young man died”. הסוכן הקודם ספר את התורמים ודילג על הסוף. באותה הזדמנות נמחק מהדף גם מניע אישי שיוחס למייסדים ולא נמצא באף אחד מששת המקורות.
+        <a class="src" href="https://www.ezermizion.org/bone-marrow-registry/" target="_blank" rel="noopener">↗ מאגר מח העצם · עזר מציון</a></div>
+    </article><article class="card">
+      <div class="top"><span class="kick">פועל שלא נעשה</span><span class="who">בית־החולים בטורקיה</span></div>
+      <div class="ba">
+        <div class="b"><span class="tag b">מה שהיה כתוב</span><div class="t">צה”ל הקים בית־חולים שדה בטורקיה וחילץ פצועים מתחת להריסות.</div></div>
+        <div class="a"><span class="tag a">מה שכתוב היום</span><div class="t">צה”ל פתח מחדש את בית־החולים העירוני נג׳יפ פאזל בקהרמאנמרש, שננטש, וטיפל בו ב־470 פצועים.</div></div>
+      </div>
+      <div class="why">שני כתבי־עת שפיטים כותבים במפורש “our personnel re-opened the hospital” ו־“decided to integrate with an existing hospital”. המשלחת אכן הגיעה עם יכולות של בית־חולים שדה, אך לא הקימה אותו. מאותו דף נמחק גם המשפט “רחוק מכל מצלמה” — המבצע תועד בהרחבה בעיתונות הטורקית והבינלאומית.
+        <a class="src" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10450639/" target="_blank" rel="noopener">↗ Journal of Global Health · PMC</a></div>
+    </article><article class="card">
+      <div class="top"><span class="kick">מונח שהומצא</span><span class="who">דן שכטמן</span></div>
+      <div class="ba">
+        <div class="b"><span class="tag b">מה שהיה כתוב</span><div class="t">“גילה דפוס הפזה שסתר את כל חוקי הגבישנות המקובלים”.</div></div>
+        <div class="a"><span class="tag a">מה שכתוב היום</span><div class="t">ראה תבנית עקיפה בעלת סימטריה של פי עשרה — סימטריה שגביש מחזורי אינו יכול להחזיק.</div></div>
+      </div>
+      <div class="why">“דפוס הפזה” אינו מונח, ו”כל חוקי הגבישנות” הגזמה: מדובר באיסור אחד, ספציפי ומדיד. בדרך התברר שגם עמוד העובדות של NobelPrize.org שוגה ומדבר על קרני רנטגן — הגילוי נעשה במיקרוסקופ אלקטרוני, כפי שכתוב בהודעת הפרס של אותו גוף עצמו.
+        <a class="src" href="https://www.nobelprize.org/prizes/chemistry/2011/press-release/" target="_blank" rel="noopener">↗ הודעת הפרס · האקדמיה השוודית למדעים</a></div>
+    </article></div>
+  </section>
+
+  <section id="deeds">
+    <div class="head"><h2>מעש־מעש</h2><span>הכותרת, המספרים, וכל תיקון</span></div>
+    <p class="sub">שבעה מעשים. שישה מהם נבנו מחדש בפועל לפי התקן המלא; דונה גרציה עברה דור
+      קודם של המעבר ונשארת כאן כפי שהיא.</p>
+    <nav class="deeds" id="tabs"></nav>
+    <div class="panel" id="panel"></div>
+  </section>
+
+  <section id="honest">
+    <div class="head"><h2>מה עוד לא מושלם</h2></div>
+    <div class="honest">
+      <h3>הדף הזה לא נכתב כדי לנצח</h3>
+      <p>מעש שכל מקורותיו מהללים אותו הוא מעש שלא נבדק. אלה הדברים שנשארו פתוחים אחרי המעבר,
+        ומופיעים כאן במכוון:</p>
+      <ul><li><b>41 שאלות נשארו בלי תשובה</b> ונרשמו ככאלה. שדה שכתוב בו “לא הוכרע” הוא תשובה עוברת בתקן; שדה ריק אינו.</li><li><b>20 מחלוקות בין מקורות</b> נכתבו בדף כטווח ולא כמספר אחד — תאריך הבריחה מאושוויץ, גודל המשלחת לטורקיה, כמות ה־CO₂ שנחסכת לטונה.</li><li><b>2 מעשים סומנו <span dir="ltr">partial</span></b> (עזר מציון · UBQ) — נגמר להם תקציב החיפוש לפני שנסגר הכול, ומה שחסר רשום בשורה עצמה.</li><li><b>דונה גרציה עומד על 34/46</b> — עבר דור קודם של המעבר, לפני שהתקן נסגר. הוא בתור לבנייה מחדש כמו כולם.</li><li><b>אף מעש כאן אינו “פטור”.</b> גם מעש שתוקן חוזר לתור — מי שתיקן יכול היה לפספס בדיוק כמו מי שכתב.</li></ul>
+    </div>
+  </section>
+
+  <footer>
+    <div class="gold-rule" style="margin-bottom:26px"></div>
+    <div class="links">
+      <a href="https://maasei-israel.vercel.app">האתר החי</a>
+      <a href="../">השוואת שדה־מול־שדה</a>
+    </div>
+    <div>נבנה 11.08.2026 · המספרים נמדדו מהמסד ברגע הבנייה</div>
+  </footer>
+</div>
+
+<script id="data" type="application/json">{"live": "https://maasei-israel.vercel.app", "autoRules": 46, "deeds": [{"id": "347192a7-eafd-402f-9216-fb7d27795bd2", "short": "הדי לאמאר", "title_before": "שחקנית הוליווד הדי לאמאר שותפה בהמצאת קפיצת-התדרים שבבסיס ה-Wi-Fi", "title_after": "הדי לאמאר ואנתייל רשמו פטנט להכוונת טורפדו בקפיצת תדרים, ולא קיבלו אגורה", "m_before": {"std": 17, "citations": 2, "domains": 1, "wiki": 2, "located": 0, "quoted": 2, "images": 1, "captioned": 0, "summary": 0, "four": 0, "people": 0, "location": 0, "chars": 490}, "m_after": {"std": 46, "citations": 42, "domains": 16, "wiki": 0, "located": 42, "quoted": 42, "images": 10, "captioned": 10, "summary": 1, "four": 4, "people": 2, "location": 1, "chars": 6551}, "corrections": [], "removed": [{"what": "הכותרת \"שותפה בהמצאת קפיצת-התדרים שבבסיס ה-Wi-Fi\"", "why": "הפטנט עצמו לא כיסה את עקרון קפיצת התדרים (התביעה השביעית נדחתה ונמחקה), וממציא הבלוטות' מעיד שלא הכיר את הפטנט; ה-Wi-Fi זנח קפיצת תדרים מוקדם."}, {"what": "\"ממשפחה יהודית\"", "why": "לא מדויק: האם המירה לקתוליות, הדי עצמה המירה לנצרות לקראת נישואיה 1933. הנוסח שנבחר: \"בת להורים ממוצא יהודי\"."}, {"what": "\"מערכת הכוונה אלחוטית לטורפדו של בעלות הברית\"", "why": "\"של בעלות הברית\" מרמז על אימוץ מבצעי. הפטנט מעולם לא אומץ ולא שימש במלחמה."}, {"what": "\"עקרונותיה משמשים כיום ברשתות אלחוטיות מאובטחות, בהן בלוטות' וגרסאות מוקדמות של Wi-Fi\" כטענה עובדתית פשוטה", "why": "נותר בדף, אך רק כצד אחד של מחלוקת מתועדת, לצד עדות הארטסן ורות'מן."}, {"what": "שתי הציטטות מוויקיפדיה כמקור", "why": "ויקיפדיה פסולה כאסמכתא בפרויקט הזה. שימשה רק כמפת דרכים למקורות אמיתיים."}, {"what": "תצלום הפרסום מ-1944 כתמונת כותרת", "why": "מסמך בן-הזמן (גיליון השרטוט של הפטנט) עדיף על תצלום יח\"צ. התמונה נשמרה בדף כתמונה בודדת, עם כיתוב שמסביר למה היא שם."}], "status": "complete"}, {"id": "10da5666-5b73-4e50-b572-ac3a9e077c92", "short": "ורבה־וצלר", "title_before": "שני אסירים נמלטו מאושוויץ וכתבו דוח שהזהיר את העולם מפני ההשמדה", "title_after": "ורבה וצלר נמלטו מאושוויץ והזהירו מראש מפני גירוש יהודי הונגריה", "m_before": {"std": 18, "citations": 2, "domains": 2, "wiki": 0, "located": 0, "quoted": 2, "images": 3, "captioned": 0, "summary": 0, "four": 0, "people": 0, "location": 0, "chars": 545}, "m_after": {"std": 46, "citations": 19, "domains": 10, "wiki": 0, "located": 19, "quoted": 19, "images": 7, "captioned": 7, "summary": 1, "four": 4, "people": 7, "location": 1, "chars": 5761}, "corrections": [{"label": "", "was": "\"באפריל 1944 נמלטו\" בלי תאריך", "now": "7 באפריל (כניסה למחבוא) ו-10 באפריל (חציית הפרימטר)", "why": "USHMM ואתר מוזיאון אושוויץ נוקבים ב-7 באפריל, HMD ב-10 באפריל. אלו שני שלבים של אותו אירוע, ומברק הגסטפו מ-8 באפריל מוכיח מתי הורמה האזעקה", "url": ""}, {"label": "", "was": "\"דוח מפורט\" בלי היקף", "now": "כ-40 עמודים", "why": "HMD ו-rudolfvrba.com נוקבים ב-40 עמודים; ה'גרדיאן' נוקב ב-32. נכתב \"כ-40\"", "url": ""}, {"label": "", "was": "מקום כתיבת הדוח לא צוין", "now": "ז'ילינה, סלובקיה", "why": "מוזיאון אושוויץ ו-HMD", "url": ""}, {"label": "", "was": "source_label בעברית בלבד", "now": "נוסף source_label_en", "why": "כלל 20 — תרגום מלא", "url": ""}], "removed": [{"what": "\"הדוח... הגיע לשווייץ ופורסם בעיתונות, ובעקבותיו פנו מנהיגי העולם לממשלת הונגריה\" כרצף סיבתי סגור", "why": "ספריית רוזוולט כותבת במפורש ש\"חוקרים חלוקים\" עד כמה הדוח הופעל; הניסוח החדש מציג את הרצף ואת המחלוקת עליו"}, {"what": "\"הגירושים נעצרו ב-9 ביולי 1944\" כעובדה יחידה וסופית", "why": "שלושה מקורות נוקבים ב-7, ב-8 וב-9 ביולי, ומקור רביעי מדגיש שהעצירה הייתה זמנית. נכתב כטווח עם הסבר"}, {"what": "הקישור לתמונה AuschwitzProtocolsmap.jpg", "why": "חסרים בה צלם ושנה בוויקישיתוף — נכשלת בכלל 12"}, {"what": "הקישור לתמונה Vrba-Wetzler_report_sketch.JPG", "why": "תיאורה זהה כמעט מילה במילה לתמונת הקרמטוריומים; הושארה רק זו שיש לה מיקום מדויק (עמ' 15) — כלל 47"}], "status": "complete"}, {"id": "41f71ed3-5aae-4f2f-a35a-3cb64a9a1283", "short": "עזר מציון", "title_before": "עזר מציון מפעילה את מאגר מח העצם היהודי הגדול בעולם", "title_after": "עזר מציון הקימה מאגר מח עצם אחרי שמשה סחייק מת בלי תורם", "m_before": {"std": 19, "citations": 15, "domains": 8, "wiki": 1, "located": 0, "quoted": 15, "images": 1, "captioned": 0, "summary": 0, "four": 0, "people": 0, "location": 0, "chars": 1381}, "m_after": {"std": 46, "citations": 17, "domains": 6, "wiki": 0, "located": 17, "quoted": 17, "images": 8, "captioned": 8, "summary": 1, "four": 4, "people": 9, "location": 1, "chars": 3517}, "corrections": [{"label": "מבצע 1996 למען משה סחייק — מהצלחה לכישלון", "was": "הטקסט הקודם רמז שהמבצע גייס 5,000 תורמים ובכך הצליח.", "now": "המבצע לא מצא התאמה; סחייק מת; המאגר הוקם בעקבות כך.", "why": "ezermizion.org: \"no match was found among the 5,000 people who participated in the drive. Sadly, the young man died\"", "url": ""}, {"label": "הסרת טענה שלא אומתה באף מקור", "was": "\"אחרי שהתמודדו ב-1991 עם מחלת הלוקמיה של בעלה\" — סיפור מחלת מוטי זיסר ב-1991 כמניע.", "now": "הוסר מהטקסט. ynet אומר רק \"הקימו מוטי ז\"ל וד\"ר ברכה זיסר יחד עם עמותת עזר מציון את המאגר\", בלי מניע אישי ובלי לתאר יחסי משפחה.", "why": "כלל 49 (אפס-אמון): הטענה לא נמצאה באף אחד מששת המקורות שנמשכו. הועברה ל-unresolved ול-person_notes.", "url": ""}, {"label": "הסופרלטיב שבכותרת", "was": "\"הגדול בעולם\" בכותרת, על סמך אתר הארגון בלבד.", "now": "בגוף הטקסט נכתב \"הגדול בעולם ביחס לאוכלוסייה\" בלבד, המגובה ב-ynet וב-mako מנתוני WMDA. הניסוח \"הגדול בעולם בקרב יהודים\" מיוחס במפורש לארגון ואינו נושא את הכותרת.", "why": "כלל 7", "url": ""}, {"label": "הסרת \"ללא תשלום\" מתיאור המאגר", "was": "תואר כשירות ללא תשלום.", "now": "הוסר. אף אחד מהמקורות שנמשכו אינו אומר זאת על המאגר.", "why": "כלל 49", "url": ""}, {"label": "מספרי גודל הארגון", "was": "מספר יחיד ללא ייחוס.", "now": "טווח עם ייחוס לכל מקור, ורישום ב-disputes.", "why": "כלל 30", "url": ""}], "removed": [{"what": "ציטוט מוויקיפדיה", "why": "ויקיפדיה אינה מקור אלא מפת דרכים להערות השוליים שלה (כלל 2)."}, {"what": "ציטוט מ-timesofisrael.com", "why": "HTTP 403. הדומיין נחסם ונוטש מיד, כפי שנדרש."}, {"what": "ציטוטים מ-ynetnews.com", "why": "אותו מוציא לאור כמו ynet.co.il — לא דומיין עצמאי נוסף, ולא אומת מחדש."}, {"what": "הפניה ל-Jewish Virtual Library (PDF)", "why": "הוחלפה במקור בלתי-תלוי חזק יותר לאותה טענה: מרכז שניידר."}, {"what": "סרטון YouTube ותיאורו (\"בסרטון נפגש רוי הקטן עם נועם\")", "why": "yt-dlp נחסם: \"Sign in to confirm you're not a bot\". התיאור לא ניתן לאימות, והסרטון הוסר במלואו."}, {"what": "שלוש תמונות Wikimedia (Ezer_Mizion_ambulance.jpg, Ezermizion1980.JPG, קובץ ח\"כ מקלב)", "why": "HTTP 429 חוזר בשלושה ניסיונות (HEAD, HEAD עם User-Agent, GET עם Range) בעוד חמישה קבצים באותו שרת החזירו 200. לא אומתו כחיים (כלל 11)."}, {"what": "תצלום stock של shutterstock ותמונה ממוזערת מ-ynet", "why": "אילוסטרציה גנרית, לא תיעוד של המעש (כלל 17)."}], "status": "partial"}, {"id": "4b74f9e1-4d2b-470b-8a57-48f3a57f693f", "short": "UBQ", "title_before": "חברת UBQ הישראלית הופכת פסולת ביתית מעורבת לחומר תרמופלסטי מרוכב", "title_after": "UBQ הישראלית הופכת אשפה ביתית מעורבת, כולל שאריות מזון, לגרגרים תרמופלסטיים", "m_before": {"std": 16, "citations": 2, "domains": 1, "wiki": 0, "located": 0, "quoted": 2, "images": 0, "captioned": 0, "summary": 0, "four": 0, "people": 0, "location": 0, "chars": 610}, "m_after": {"std": 46, "citations": 11, "domains": 6, "wiki": 0, "located": 11, "quoted": 11, "images": 7, "captioned": 7, "summary": 1, "four": 4, "people": 8, "location": 1, "chars": 6228}, "corrections": [{"label": null, "was": "'ב-2024 פתחה את מפעל הייצור המסחרי המלא הראשון שלה בברגן אופ זום שבהולנד'", "now": "המפעל בברגן אופ זום פועל מאז 2023 לפי הדיווח מהשטח ב-2025; TIME כתב באוקטובר 2023 שהוא עתיד להיפתח בינואר. המקורות נעים בין 2023 ל-2024 ואני כותב את הטווח.", "why": "", "url": "https://www.industrylinqs.com/chemicals/2025/07/new-ubq-plastics-plant-in-bergen-op-zoom-the-invention-of-the-century-and-no-one-knows-it/"}, {"label": null, "was": "'מפעל מסחרי מלא נפתח בהולנד ב-2024' — כאילו זו נקודת הסיום המנצחת", "now": "המפעל אכן פועל, אך ביולי 2025 בחלק קטן מכושרו, והמכשול הוא אימוץ בשוק ולא טכנולוגיה. השמטת העובדה הזו הפכה את הטקסט הקודם לפרסומת.", "why": "", "url": "https://www.industrylinqs.com/chemicals/2025/07/new-ubq-plastics-plant-in-bergen-op-zoom-the-invention-of-the-century-and-no-one-knows-it/"}, {"label": null, "was": "תיאור שלא הזכיר כלל ספקנות מקצועית", "now": "נוספה הדחייה המפורשת של דואן פרידי מ-2018 ('טובות מכדי להיות אמיתיות', אלכימיה) וההסתייגות של TechCrunch מ-2021. מעש שכל מקורותיו מהללים אותו הוא מעש שלא נבדק.", "why": "", "url": "https://www.ynetnews.com/articles/0,7340,L-5189644,00.html"}, {"label": null, "was": "'פיתוח תהליך שהופך פסולת ביתית מעורבת לחומר גלם תרמופלסטי, מהקמת החברה ב-2012 ועד ייצור מסחרי מלא'", "now": "act מתאר עכשיו את המנגנון עצמו (ליגנין, תאית, סיבים וסוכרים כמטריצה), ולא את ציר הזמן — שעבר ל-aftermath לפי מילון הפרשנות לקטגוריית המצאה מדעית.", "why": "", "url": "https://www.industrylinqs.com/chemicals/2025/07/new-ubq-plastics-plant-in-bergen-op-zoom-the-invention-of-the-century-and-no-one-knows-it/"}, {"label": null, "was": "חברת UBQ הישראלית הופכת פסולת ביתית מעורבת לחומר תרמופלסטי מרוכב", "now": "UBQ הישראלית הופכת אשפה ביתית מעורבת, כולל שאריות מזון, לגרגרים תרמופלסטיים", "why": "", "url": "https://www.ynetnews.com/articles/0,7340,L-5189644,00.html"}], "removed": [{"what": "'ב-2018 הפכה UBQ לתאגיד B מוסמך'", "why": "לא אומת באף אחד משישה מקורות עצמאיים שנמשכו. כלל 49 — טענה שלא אומתה מחדש נמחקת, לא מועברת."}, {"what": "'ב-2024 פתחה את מפעל הייצור המסחרי המלא הראשון שלה בברגן אופ זום'", "why": "שנת 2024 אינה נתמכת בשום מקור עצמאי שנמשך. Industrylinqs (2025) קובע 'operational since 2023', ו-TIME (אוקטובר 2023) כתב שהמתקן עתיד להיפתח בינואר. הוחלף בטווח מתועד ולא בבחירה שקטה בשנה."}, {"what": "שני הציטוטים הקודמים, שניהם מ-ubqmaterials.com", "why": "דומיין אחד, והוא אתר הארגון עצמו. כשל בכלל 2 (חמישה דומיינים עצמאיים) ובכלל 7 (סופרלטיב לא נשען על אתר הארגון). הוחלפו ב-11 ציטוטים משישה דומיינים עצמאיים."}, {"what": "source_url ו-source_label שהצביעו על ubqmaterials.com/about", "why": "המקור הראשי של מעש לא יכול להיות דף 'הסיפור שלנו' של החברה שעליה המעש מדבר."}, {"what": "media_url ליוטיוב (GQYnaKEI4DU)", "why": "לא ניתן היה למשוך תמליל לסרטון (כלל 62 — תמליל אינו אופציונלי), ולכן גם לא ניתן היה לאמת שהמעש הוא נושאו המרכזי (כלל 15) או לדרג לפיו (כלל 16). הוסר לפי כלל 60: אין סרטון מאומת — התמונות מספיקות."}], "status": "partial"}, {"id": "988815b9-3564-4d60-9fcc-3f41bff6de29", "short": "דן שכטמן", "title_before": "דן שכטמן גילה קריסטלים שנחשבו בלתי אפשריים — ושינה את תפיסת מדע החומרים", "title_after": "דן שכטמן ראה סימטריה אסורה, ספג לעג — ושינה את הגדרת הגביש", "m_before": {"std": 16, "citations": 2, "domains": 1, "wiki": 0, "located": 0, "quoted": 2, "images": 0, "captioned": 0, "summary": 0, "four": 0, "people": 0, "location": 0, "chars": 667}, "m_after": {"std": 46, "citations": 48, "domains": 11, "wiki": 0, "located": 48, "quoted": 48, "images": 10, "captioned": 10, "summary": 1, "four": 4, "people": 11, "location": 1, "chars": 7329}, "corrections": [{"label": "", "was": "כותרת: \"דן שכטמן גילה קריסטלים שנחשבו בלתי אפשריים — ושינה את תפיסת מדע החומרים\"", "now": "\"דן שכטמן ראה סימטריה אסורה, ספג לעג — ושינה את הגדרת הגביש\"", "why": "13 מילים במקום 6–12 (כלל 73; המקף נספר), ו\"תפיסת מדע החומרים\" רכה מהמקורות. מה שהשתנה בפועל, לפי ועדת נובל ולפי הטכניון, הוא ההגדרה הפורמלית של \"גביש\" מטעם IUCr.", "url": ""}, {"label": "", "was": "\"גילה דפוס הפזה שסתר את כל חוקי הגבישנות המקובלים\"", "now": "\"ראה תבנית עקיפה בעלת סימטריה של פי עשרה\", וההסבר שציר של פי חמישה אסור בגביש מחזורי", "why": "\"דפוס הפזה\" אינו מונח; \"כל חוקי הגבישנות\" הוא הגזמה. המקורות מדברים על איסור ספציפי אחד ומדיד.", "url": ""}, {"label": "", "was": "source_url = עמוד העובדות של נובל, ובו: \"diffraction patterns, which occur when x-rays are passed through the crystals\"", "now": "source_url = הודעת הפרס של האקדמיה השוודית; ובגוף הדף נכתב שהעקיפה הייתה של אלקטרונים", "why": "עמוד העובדות של NobelPrize.org עצמו שוגה: הגילוי נעשה במיקרוסקופ אלקטרוני חודר, לא בקרני רנטגן. הודעת הפרס של אותו גוף כותבת נכון \"electron microscope\", וכך גם NIST ועמוד הסגל של אוניברסיטת איווה. הציטוט השגוי נשמר ב-citations כדי שהקורא יוכל לראות את מקור הבלבול.", "url": ""}, {"label": "", "was": "\"ב-2011 הכריז ועד פרס נובל שהם צדקו\"", "now": "פירוט הנתיב מ-1984 עד 2011: דחיית כתב היד, פרסום ב-PRL, התנגדות פאולינג, פאזת צאי היציבה 1987, שינוי הגדרת IUCr 1991/1992", "why": "כלל 65 — \"מה קרה אחר כך\" הוא ציר זמן עד האימוץ בפועל, לא קפיצה מהגילוי לפרס.", "url": ""}, {"label": "", "was": "media_url = קישור לסרטון יוטיוב", "now": "media_urls = עשר תמונות, ובראשן עמוד יומן המעבדה", "why": "הדף שנמשך מיוטיוב אינו מכיל את מזהה הסרטון המבוקש, ומשיכת תמליל נחסמה. כלל 60: בהיעדר סרטון, חמש תמונות ומעלה מספיקות.", "url": ""}], "removed": [{"what": "\"דפוס הפזה\" — צירוף שאינו קיים במקורות ואינו מונח מקצועי. המונח הוא תבנית עקיפה (diffraction pattern).", "why": ""}, {"what": "\"סדר מתמטי מוחלט ללא חזרה תקופתית\" — ניסוח שהסוכן הקודם המציא; אין לו מקבילה באף מקור שנבדק. הוחלף בניסוח ההגדרה של IUCr עצמה.", "why": ""}, {"what": "\"מדע החומרים לא יהיה עוד כשהיה\" — סופרלטיב בלי מקור (כלל 7). הוחלף בעדות בוטינגר על כך שהמהפכה הייתה מושגית ולא מסחרית, ובשינוי ההגדרה בפועל.", "why": ""}, {"what": "media_url ששלח לסרטון יוטיוב (z3oKhYhOVSk) — הדף שנמשך אינו מכיל את הסרטון הזה, ויוטיוב חסם משיכת תמליל. ראה unresolved.", "why": ""}], "status": "complete"}, {"id": "f0ca86ec-0a88-4963-b340-ad2e4f790c2b", "short": "בית־החולים בטורקיה", "title_before": "צה\"ל הקים בית-חולים שדה בטורקיה וחילץ פצועים מתחת להריסות", "title_after": "צה\"ל פתח מחדש בית-חולים נטוש בקהרמאנמרש וטיפל ב-470 פצועי רעידת האדמה", "m_before": {"std": 16, "citations": 2, "domains": 1, "wiki": 0, "located": 0, "quoted": 2, "images": 0, "captioned": 0, "summary": 0, "four": 0, "people": 0, "location": 0, "chars": 432}, "m_after": {"std": 46, "citations": 12, "domains": 5, "wiki": 0, "located": 12, "quoted": 12, "images": 6, "captioned": 6, "summary": 1, "four": 3, "people": 8, "location": 1, "chars": 5121}, "corrections": [{"label": "", "was": "צה\"ל הקים בית-חולים שדה בטורקיה", "now": "צה\"ל פתח מחדש בית-חולים ציבורי טורקי נטוש", "why": "JOGH: \"our personnel re-opened the hospital\"; JEM: \"decided to integrate with an existing hospital\"; Jerusalem Post: \"the reopening of a local hospital after it had been abandoned\"", "url": ""}, {"label": "", "was": "\"בשבוע אחד טופלו 470 פצועים\" ללא שם המוסד", "now": "בית-החולים העירוני נג'יפ פאזל (Necip Fazıl Şehir Hastanesi) — שם המוסד מתועד בשני מאמרים שפיטים", "why": "https://wmpllc.org/ojs/index.php/jem/article/view/3855 ו-https://pmc.ncbi.nlm.nih.gov/articles/PMC10450639/", "url": ""}, {"label": "", "was": "כל שני הציטוטים באו מאותו מאמר יחיד", "now": "12 ציטוטים מחמישה דומיינים עצמאיים: שני כתבי-עת שפיטים, עיתון ישראלי בן-הזמן, סוכנות ידיעות טורקית וסוכנות יהודית-אמריקנית", "why": "כלל 2", "url": ""}, {"label": null, "was": "חילוץ · אסון טבע · רפואה", "now": "חילוץ ואסון טבע · רפואה והצלת חיים", "why": "תגים מחוץ לרשימה הסגורה (כלל 123) — התדריך לא הכיל את הרשימה", "url": ""}], "removed": [{"what": "media_url ליוטיוב HFOvAnpiwYA", "why": "נבדק במטא-דאטה של יוטיוב: הכותרת היא \"Israeli rescue team assists with earthquakes relief efforts\" מערוץ i24NEWS English. נושאו המרכזי הוא צוות החילוץ, לא בית-החולים (כלל 15). כמו כן לא נמשך תמליל (כללים 16, 62). הוסר במקום להישאר כסרטון שאינו על המעש. עם אפס סרטונים, שש התמונות עומדות בכלל 60."}, {"what": "הניסוח \"משלחת של צה\"ל בת 140 אנשי צוות ... הקימה בית-חולים שדה ברמה 3 בעיר קהרמאנמרש\"", "why": "\"הקימה בית-חולים שדה\" סותר את המקור הראשי. המשלחת הגיעה עם יכולות של בית-חולים שדה ברמה 3 אך לא הקימה אותו — היא פתחה מחדש מוסד טורקי קיים. תוקן."}, {"what": "\"רחוק מכל מצלמה\" (בשדה ripple הקודם)", "why": "טענה שלא נתמכת באף מקור, ואף מוכחשת: המבצע תועד בהרחבה על ידי דובר צה\"ל, סוכנות אנדולו הטורקית ועיתונות בינלאומית."}], "status": "complete"}, {"id": "81bfe740-07d5-4bea-860d-03cb8f27dc68", "short": "דונה גרציה", "title_before": "דונה גרסיה מנדס נסי מקימה רשת מילוט שהצילה מאות אנוסים מהאינקוויזיציה", "title_after": "דונה גרסיה מנדס נסי מקימה רשת מילוט שהצילה מאות אנוסים מהאינקוויזיציה", "m_before": {"std": 17, "citations": 2, "domains": 1, "wiki": 2, "located": 0, "quoted": 2, "images": 2, "captioned": 0, "summary": 0, "four": 0, "people": 0, "location": 0, "chars": 421}, "m_after": {"std": 34, "citations": 5, "domains": 5, "wiki": 0, "located": 5, "quoted": 5, "images": 9, "captioned": 9, "summary": 1, "four": 0, "people": 4, "location": 1, "chars": 795}, "corrections": [{"label": null, "was": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Gracianasimedal.jpg (משמשת כדיוקן של דונה גרציה)", "now": "להחליף בתמונה ראשית אחרת, או להוסיף כיתוב מתקן", "why": "תיאור הקובץ ב-Wikimedia Commons הוא 'Medal of Gracia Nasi the Younger' — כלומר האחיינית, לא דונה גרציה עצמה. התמונה הראשית של המעש מציגה כרגע את האדם הלא נכון.", "url": "https://commons.wikimedia.org/wiki/File:Gracianasimedal.jpg"}, {"label": null, "was": "דונה גרסיה מנדס נסי", "now": "דונה גרציה מנדס נשיא", "why": "כל המקורות העבריים שמשכתי — מכון שכטר, גלובס — כותבים 'גרציה' ו'נשיא'. הכתיב שבשורה ('גרסיה', 'נסי') הוא תעתיק מאנגלית ולא הכתיב המקובל בעברית.", "url": "https://schechter.ac.il/article/dona-gracia/"}], "removed": [], "status": "complete"}]}</script>
+<script>
+const D = JSON.parse(document.getElementById('data').textContent);
+let cur = 0;
+const esc = s => (s==null?'':String(s)).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+function chips(d){
+  const rows = [['ציון',            'std',  '/'+D.autoRules],
+                ['מקורות',          'citations', ''],
+                ['דומיינים',        'domains', ''],
+                ['ויקיפדיה',        'wiki', ''],
+                ['תמונות עם קרדיט', 'captioned', ''],
+                ['אנשים',           'people', '']];
+  return rows.map(([l,k,suf])=>{
+    const b=d.m_before[k], a=d.m_after[k];
+    return `<div class="chip">${l} <b>${a}${suf}</b>${b!==a?` <s>היה ${b}${suf}</s>`:''}</div>`;
+  }).join('');
+}
+
+function panel(){
+  const d = D.deeds[cur];
+  const fixes = d.corrections.map(c=>`<div class="fix">
+      ${c.label?`<div class="lbl">${esc(c.label)}</div>`:''}
+      ${c.was?`<div class="was">${esc(c.was)}</div>`:''}
+      ${c.now?`<div class="now">${esc(c.now)}</div>`:''}
+      ${c.why?`<div class="why">${esc(c.why)}${c.url?` · <a href="${esc(c.url)}" target="_blank" rel="noopener">המקור</a>`:''}</div>`:''}
+    </div>`).join('');
+  const rms = d.removed.map(r=>`<div class="rm">${esc(r.what)}
+      ${r.why?`<span>${esc(r.why)}</span>`:''}</div>`).join('');
+  document.getElementById('panel').innerHTML = `
+    <div class="titles">
+      <div class="b"><span class="tag b">הכותרת שהייתה</span><div class="t">${esc(d.title_before)}</div></div>
+      <div class="a"><span class="tag a">הכותרת היום</span><div class="t">${esc(d.title_after)}</div></div>
+    </div>
+    <div class="chips">${chips(d)}</div>
+    ${fixes?`<h3 class="mini">תוקן · ${d.corrections.length}</h3>${fixes}`:''}
+    ${rms?`<h3 class="mini">נמחק מהדף · ${d.removed.length}</h3>${rms}`:''}
+    <a class="open" href="${D.live}/deed/${d.id}" target="_blank" rel="noopener">← לדף החי של ${esc(d.short)}</a>`;
+}
+function tabs(){
+  document.getElementById('tabs').innerHTML = D.deeds.map((d,i)=>
+    `<button class="${i===cur?'on':''}" data-i="${i}">${esc(d.short)}</button>`).join('');
+}
+document.getElementById('tabs').addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  cur=+b.dataset.i; tabs(); panel();
+});
+tabs(); panel();
+</script>
+</body></html>
